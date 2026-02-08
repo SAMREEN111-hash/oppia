@@ -204,6 +204,12 @@ export default function isElementClickable(
    * @returns {boolean} Whether the element is in the viewport.
    */
   const isElementInViewport = (element: Element): boolean => {
+    element.scrollIntoView({
+      block: 'center',
+      inline: 'center',
+      behavior: 'auto',
+    });
+
     const elementDimensions = element.getBoundingClientRect();
 
     const windowHeight =

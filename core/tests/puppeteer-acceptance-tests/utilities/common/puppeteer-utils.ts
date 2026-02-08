@@ -490,6 +490,7 @@ export class BaseUser {
       typeof selector === 'string'
         ? await this.page.waitForSelector(selector)
         : selector;
+
     try {
       await this.page.waitForFunction(isElementClickable, {}, element);
     } catch (error) {
